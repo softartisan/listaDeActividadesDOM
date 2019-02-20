@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="estilo.css" rel="stylesheet" />
+		<title>Mi lista de tareas</title>
+		<script src="app.js"></script>
+  </head>
+  <body>
+        <div id="wrapper">
+            <header>
+                <div id="page-banner">
+                    <h1 class="title">Tareas</h1>
+                    <form id="search-tasks">
+                        <input type="text" placeholder="Buscar tarea..." />
+                    </form>
+                </div>
+            </header>
+            <div id="task-list">
+                <h2 class="title">Tareas de hoy</h2>
+                <ul>
+                    <li>
+                        <span class="name">Comprar pan</span>
+                        <span class="delete">Eliminar</span>
+                    </li>
+                    <li>
+                        <span class="name">Hacer el baño</span>
+                        <span class="delete">Eliminar</span>
+                    </li>
+                    <li>
+                        <span class="name">Limpiar el perro</span>
+                        <span class="delete">Eliminar</span>
+                    </li>
+                    <li>
+                        <span class="name">Ir al supermercado</span>
+                        <span class="delete">Eliminar</span>
+                    </li>
+                </ul>
+            </div>
+            <form id="add-task">
+                <input type="checkbox" id="hide"/>
+                <label for="hide">Esconder tareas</label>
+                <input type="text" placeholder="Agregar una tarea..." />
+                <button>Agregar</button>
+            </form>
+            <div id="tabbed-content">
+                <ul class="tabs">
+                    <li data-target="#about" class="active">About</li>
+                    <li data-target="#contact" class="active">Contact</li>
+                </ul>
+                <div class="panel active" id="about">
+                    <p>ABOUTABOUTABOUTABOUTABOUTABOUTABOUTABOUT </p>
+                </div>
+                <div class="panel " id="contact">
+                    <p>CONTACTCONTACTCONTACTCONTACTCONTACTCONTACTCONTACT</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

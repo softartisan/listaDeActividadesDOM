@@ -39,6 +39,58 @@ document.addEventListener('DOMContentLoaded',function(){
         list.appendChild(li);
     });
 
+    //Escondes tareas
+    const hideBox = document.querySelector('#hide');
+    hideBox.addEventListener('change',function(e){
+        if(hideBox.checked){
+            list.style.display = 'none';
+        }
+        else{
+            list.style.display = 'initial';
+        }
+    });
+
+    //Buscar tarea
+    const searchBar = document.forms['search-tasks'].querySelector('input');
+    
+    searchBar.addEventListener('keyup',function (e){
+        const term = e.target.value.toLowerCase();
+        const tasks = list.getElementsByTagName('li');
+    
+        Array.from(tasks).forEach(function(task){
+            const name = task.firstElementChild.textContent;
+            if(name.toLowerCase().indexOf(term) != -1){ 
+                //Si lo que se escribe no esta presente en el principio del nombre de la tarea se esconde el li
+                task.style.display = 'block';
+            }
+            else{
+                task.style.display = 'none';
+            }
+        });
+    
+    });
+
+
+    //Contenido tabeado
+    const tabs = document.querySelector('.tabs');
+    const panels = document.querySelectorAll('.panel');
+    
+    tabs.addEventListener('click',function (e){
+        if(e.target.tagName == 'LI'){
+            const targetPanel = document.querySelector(e.target.dataset.target);
+            Array.from(panels).forEach(function (panel){
+                if(panel == targetPanel){
+                    panel.classList.add('active');
+                }
+                else{
+                    panel.classList.remove('active');
+                }
+            });
+        }
+    });
+
+
+
 
 
 
